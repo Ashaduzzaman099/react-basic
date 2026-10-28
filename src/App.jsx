@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./card.css";
 import Card from "./components/Card";
+import Counter from "./components/Counter";
+import Display from "./components/Display";
 
 function App() {
   const [name, setName] = useState("");
@@ -24,6 +26,9 @@ function App() {
   return (
     <>
       <div>
+        <Counter />
+        <Display />
+
         <form onSubmit={handelSubmit}>
           <input
             type="text"
@@ -42,8 +47,6 @@ function App() {
           />
           <input type="submit" value="Submit" />
         </form>
-
-        {/* <Counter /> */}
 
         {members
           .filter((member) => member.age >= 18)
