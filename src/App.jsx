@@ -5,6 +5,7 @@ import Counter from "./components/Counter";
 import Display from "./components/Display";
 
 function App() {
+  const [count, setCount] = useState(0);
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
@@ -26,8 +27,8 @@ function App() {
   return (
     <>
       <div>
-        <Counter />
-        <Display />
+        <Counter count={count} setCount={setCount} />
+        <Display count={count} setCount={setCount} />
 
         <form onSubmit={handelSubmit}>
           <input

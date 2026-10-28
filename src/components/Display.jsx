@@ -1,7 +1,7 @@
-export default function Display() {
+export default function Display({ count, setCount }) {
   return (
     <div className="CardYellow">
-      <h1>0</h1>
+      <h1>{count}</h1>
     </div>
   );
 }
