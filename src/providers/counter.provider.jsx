@@ -1,9 +1,10 @@
 import { createContext } from "react"
 
-const CounterContesxt = createContext();
+export const CounterContesxt = createContext();
 export default function CounterProvider({children}) {
+    const [count, setCount] = useState(0);
     return(
-        <CounterContesxt.Provider>
+        <CounterContesxt.Provider value={{ count, setCount }}>
             {children}
         </CounterContesxt.Provider>
     )

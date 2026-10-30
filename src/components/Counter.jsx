@@ -1,4 +1,7 @@
-export default function Counter({ count, setCount }) {
+import { use } from "react";
+
+export default function Counter() {
+  const {} = use(CounterContesxt);
   const IncreementByValue = (value) => {
     setCount(count + value);
   };
