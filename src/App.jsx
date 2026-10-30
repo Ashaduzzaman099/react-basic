@@ -5,6 +5,7 @@ import Counter from "./components/Counter";
 import Display from "./components/Display";
 import NestedDisplay from "./components/NestedDisplay";
 import CounterProvider from "./providers/counter.provider";
+import DisplayUser from "./components/DisplayUser";
 
 function App() {
   const [scend, setScend] = useState(0);
@@ -37,6 +38,7 @@ function App() {
   return (
     <>
       <CounterProvider>
+        <DisplayUser/>
         <p>Parent Component {scend}</p>
         <Counter count={count} setCount={setCount} />
         <Display count={count} setCount={setCount} />
