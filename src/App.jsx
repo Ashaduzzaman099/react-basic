@@ -3,6 +3,7 @@ import "./card.css";
 import Card from "./components/Card";
 import Counter from "./components/Counter";
 import Display from "./components/Display";
+import NestedDisplay from "./components/NestedDisplay";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,6 +30,7 @@ function App() {
       <div>
         <Counter count={count} setCount={setCount} />
         <Display count={count} setCount={setCount} />
+        <NestedDisplay/>
 
         <form onSubmit={handelSubmit}>
           <input
