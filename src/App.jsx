@@ -27,12 +27,13 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="CardRead">
+        <p>Parent Component</p>
         <Counter count={count} setCount={setCount} />
         <Display count={count} setCount={setCount} />
-        <NestedDisplay/>
+        
 
-        <form onSubmit={handelSubmit}>
+        {/* <form onSubmit={handelSubmit}>
           <input
             type="text"
             onChange={(e) => setName(e.target.value)}
@@ -56,7 +57,7 @@ function App() {
           .sort((a, b) => a.age - b.age)
           .map((member) => (
             <Card nam={member.name} age={member.age} city={member.city} />
-          ))}
+          ))} */}
       </div>
     </>
   );
