@@ -1,8 +1,12 @@
 
-export default function NestedDisplay({ members }) {
+export default function NestedDisplay({ count }) {
   return (
     <div className="CardBlue">
-      <h1>Grand Child</h1>
+      <p>Grand Child
+
+        <h1>{count}</h1>
+      </p>
+      
     </div>
     );  
 }
