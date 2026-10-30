@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import Counter from "./components/Counter";
 import Display from "./components/Display";
 import NestedDisplay from "./components/NestedDisplay";
+import CounterProvider from "./providers/counter.provider";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <>
-      <div className="CardRead">
+      <CounterProvider>
         <p>Parent Component</p>
         <Counter count={count} setCount={setCount} />
         <Display count={count} setCount={setCount} />
@@ -58,7 +59,7 @@ function App() {
           .map((member) => (
             <Card nam={member.name} age={member.age} city={member.city} />
           ))} */}
-      </div>
+      </CounterProvider>
     </>
   );
 }
