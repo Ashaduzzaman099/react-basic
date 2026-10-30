@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useEffect } from "react";
 import { CounterContesxt } from "../providers/counter.provider";
 
 export default function Counter() {
@@ -6,6 +6,10 @@ export default function Counter() {
   const IncreementByValue = (value) => {
     setCount(count + value);
   };
+  useEffect(()=>{
+    console.log("Count " + count);
+  },[count])
+  
   return (
     <div>
       <button onClick={() => setCount(count + 1)}>Increement</button>

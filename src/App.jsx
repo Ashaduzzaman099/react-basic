@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./card.css";
 import Card from "./components/Card";
 import Counter from "./components/Counter";
@@ -7,6 +7,7 @@ import NestedDisplay from "./components/NestedDisplay";
 import CounterProvider from "./providers/counter.provider";
 
 function App() {
+  const [scend, setScend] = useState(0);
   const [count, setCount] = useState(0);
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -17,6 +18,13 @@ function App() {
     { name: "Hasan", age: 23, city: "Rongpur" },
     { name: "Imran", age: 10, city: "Bogura" },
   ]);
+
+  useEffect(()=>{
+    const timeId = setInterval(()=>{
+      setScend((prev)=> prev + 1);
+    }, 1000)
+    return () => clearInterval(timeId);
+  })
 
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +37,7 @@ function App() {
   return (
     <>
       <CounterProvider>
-        <p>Parent Component</p>
+        <p>Parent Component {scend}</p>
         <Counter count={count} setCount={setCount} />
         <Display count={count} setCount={setCount} />
         
