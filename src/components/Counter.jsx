@@ -1,7 +1,8 @@
 import { use } from "react";
+import { CounterContesxt } from "../providers/counter.provider";
 
 export default function Counter() {
-  const {} = use(CounterContesxt);
+  const {count, setCount} = use(CounterContesxt);
   const IncreementByValue = (value) => {
     setCount(count + value);
   };

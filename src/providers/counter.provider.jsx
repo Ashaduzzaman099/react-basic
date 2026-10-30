@@ -1,4 +1,4 @@
-import { createContext } from "react"
+import { createContext, useState } from "react"
 
 export const CounterContesxt = createContext();
 export default function CounterProvider({children}) {
