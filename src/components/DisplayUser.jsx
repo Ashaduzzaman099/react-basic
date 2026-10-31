@@ -1,14 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Card from "./Card";
 
 export default function DisplayUser() {
+  const [data, setData] = useState([]);
+
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setData(data));
   }, []);
   return (
     <div>
-      <h1>User Component</h1>
+      {data.map((user) => (
+        <Card
+          name={user.name}
+          email={user.email}
+          city={user.address.city}
+        ></Card>
+      ))}
     </div>
   );
 }

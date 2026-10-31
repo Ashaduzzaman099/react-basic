@@ -1,17 +1,17 @@
 import { useState } from "react";
 
-export default function Card({ nam, age, city }) {
+export default function Card({ name, email, city }) {
   const [member, setMember] = useState("");
   const clickHandler = (memberName) => {
     setMember(memberName);
   };
   return (
     <>
-      {age > 18 ? (
-        <div onClick={() => clickHandler(nam)} className="Card">
-          <h1>Name: {nam}</h1>
-          <h3>Age: {age}</h3>
-          <h3>Cite: {city}</h3>
+      {email === email ? (
+        <div onClick={() => clickHandler(name)} className="Card">
+          <h1>Name: {name}</h1>
+          <h3>Email: {email}</h3>
+          <h3>City: {city}</h3>
           {member}
         </div>
       ) : (
