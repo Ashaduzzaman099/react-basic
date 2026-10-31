@@ -3,12 +3,19 @@ import Card from "./Card";
 
 export default function DisplayUser() {
   const [data, setData] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => setData(data))
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []);
+
+  if (isLoading) {
+    return <p>Loding.....</p>;
+  }
   return (
     <div>
       {data.map((user) => (
